@@ -8,11 +8,15 @@
     "type": "git",
     "url": "https://github.com/Fugitives-Club/nft.git"
   },
+  "homepage": "https://github.com/Fugitives-Club/nft.git",
+  "bugs": "https://github.com/Fugitives-Club/nft.git/nft/issues",
   "keywords": [
     "FugitivesClub",
     "Hedera",
     "IPFS",
-    "SDK"
+    "SDK",
+    "NFT",
+    "Mint"
   ],
   "files": [
     "dist/**/*"
