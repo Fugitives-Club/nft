@@ -4,6 +4,10 @@
   "description": "A SDK for NFT creation with Hedera and FileCoin",
   "main": "dist/nft.js",
   "types": "dist/nft.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fugitives-Club/nft.git"
+  },
   "keywords": [
     "FugitivesClub",
     "Hedera",
