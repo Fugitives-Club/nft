@@ -1,6 +1,6 @@
 {
   "name": "@fugitivesclub/nft",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A SDK for NFT creation with Hedera and FileCoin",
   "main": "dist/nft.js",
   "types": "dist/nft.d.ts",

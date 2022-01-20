@@ -58,7 +58,7 @@ export interface CreateNFT {
   cids: string[];
   nfts: NFT[];
   supplyKey?: string;
-  adminKey?: string,
+  adminKey?: string;
 }
 
 export interface NFTProperties {

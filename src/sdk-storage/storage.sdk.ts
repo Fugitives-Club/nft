@@ -5,6 +5,7 @@ import { NFTStorage, File } from 'nft.storage';
 import * as fs from 'fs';
 import { extname } from 'path';
 const storageBaseUrl = 'https://api.nft.storage';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const mime = require('mime-types');
 
 export async function storeMetadata({
