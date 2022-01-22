@@ -34,7 +34,7 @@ export interface TokenDto {
   /** Symbol of the Token */
   symbol: string;
   /** Admin Key Properties */
-  adminKey?: string,
+  adminKey?: string;
   /** Custom Royalty Fees  */
   customRoyaltyFee: CustomFee[] | null;
   /** Array of nfts */

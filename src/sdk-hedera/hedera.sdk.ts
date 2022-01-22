@@ -37,14 +37,14 @@ export class HederaSdk {
   }
 
   async createNFT({
-                    name,
-                    symbol,
-                    customFees,
-                    supply,
-                    cids,
-                    nfts,
-                    adminKey,
-                  }: CreateNFT): Promise<NftCreated> {
+    name,
+    symbol,
+    customFees,
+    supply,
+    cids,
+    nfts,
+    adminKey,
+  }: CreateNFT): Promise<NftCreated> {
     try {
       const urls: string[] = [];
       /* Create a royalty fee */
@@ -105,7 +105,7 @@ export class HederaSdk {
         const mintTransaction = new TokenMintTransaction().setTokenId(tokenId!);
 
         for (let i = 0; i < limit; i++) {
-          const url = cids[(index * limit_chunk) + i] ?? cids[0];
+          const url = cids[index * limit_chunk + i] ?? cids[0];
 
           mintTransaction.addMetadata(Buffer.from(url));
 
