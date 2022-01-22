@@ -37,15 +37,14 @@ export class HederaSdk {
   }
 
   async createNFT({
-    name,
-    symbol,
-    customFees,
-    supply,
-    cids,
-    nfts,
-    supplyKey,
-    adminKey,
-  }: CreateNFT): Promise<NftCreated> {
+                    name,
+                    symbol,
+                    customFees,
+                    supply,
+                    cids,
+                    nfts,
+                    adminKey,
+                  }: CreateNFT): Promise<NftCreated> {
     try {
       const urls: string[] = [];
       /* Create a royalty fee */
@@ -81,10 +80,6 @@ export class HederaSdk {
         .setAutoRenewAccountId(this.hederaAccount.accountId)
         .setCustomFees(customRoyaltyFee);
 
-      if (supplyKey) {
-        tx.setSupplyKey(supplyKey);
-      }
-
       if (adminKey) {
         tx.setAdminKey(adminKey);
       }
@@ -102,14 +97,15 @@ export class HederaSdk {
 
       /* Mint the token */
       const nftIds = [];
-      const limit_chunk = 5;
+      const limit_chunk = 8;
+      let index = 0;
       const max = supply ?? nfts.length;
       for (let idx = 0; idx < max; idx += limit_chunk) {
         const limit = idx + limit_chunk > max ? max - idx : limit_chunk;
         const mintTransaction = new TokenMintTransaction().setTokenId(tokenId!);
 
         for (let i = 0; i < limit; i++) {
-          const url = cids[i] || cids[0];
+          const url = cids[(index * limit_chunk) + i] ?? cids[0];
 
           mintTransaction.addMetadata(Buffer.from(url));
 
@@ -131,6 +127,7 @@ export class HederaSdk {
         for (const nftSerial of serialNumber.values()) {
           nftIds.push(new NftId(tokenId!, nftSerial).toString());
         }
+        index = index + 1;
       }
 
       return {

@@ -143,6 +143,7 @@ export class ClientNFT {
         supply: supply,
         cids: cidsMetadata,
         nfts: tokenDto.nfts,
+        adminKey: tokenDto.adminKey,
       });
       Logger.debug('Your NFT will be available soon on', res.urls);
       return res;

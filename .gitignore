@@ -112,3 +112,4 @@ packages/*/lib
 
 # Dist folder
 dist
+/.idea
