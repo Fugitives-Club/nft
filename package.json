@@ -1,6 +1,6 @@
 {
   "name": "@fugitivesclub/nft",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A SDK for NFT creation with Hedera and FileCoin",
   "main": "dist/nft.js",
   "types": "dist/nft.d.ts",
@@ -53,7 +53,7 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@hashgraph/sdk": "^2.6.0",
+    "@hashgraph/sdk": "^2.7.1",
     "axios": "^0.24.0",
     "js-logger": "^1.6.1",
     "mime-types": "^2.1.34",
